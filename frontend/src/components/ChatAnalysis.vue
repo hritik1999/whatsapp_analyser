@@ -4,6 +4,7 @@ import axios from 'axios'
 
 const file = ref(null)
 const result = ref(null)
+const loading = ref(false)
 
 const onFileChange = (event) => {
   file.value = event.target.files[0]
@@ -15,15 +16,19 @@ const submitFile = async () => {
   const formData = new FormData()
   formData.append('file', file.value)
 
-  try {
-    const response = await axios.post('http://localhost:5000/analyse_chat', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+  loading.value = true
+
+  try{
+    const response = await fetch('http://127.0.0.1:5000/analyse_chat', {
+      method: 'POST',
+      body: formData
     })
-    result.value = JSON.stringify(response.data, null, 4)
-  } catch (error) {
-    console.error('Error uploading file:', error)
+    result.value = await response.json()
+    console.log(result.value)
+    loading.value = false
+  } catch {
+    loading.value = false
+    console.error('Failed to submit file')
   }
 }
 </script>
@@ -42,10 +47,18 @@ const submitFile = async () => {
         </div>
       </div>
     </div>
-    <div class="card mt-4 mx-auto" v-if="result" style="max-width: 600px;">
+    <div class="text-center" v-if="loading"> 
+        <img src="../assets/ZKZg.gif" height="50" width="50">
+    </div>
+    <div class="card mt-4 mx-auto" v-if="result">
       <div class="card-body">
         <h2>Analysis Result</h2>
-        <pre class="results">{{ result }}</pre>
+        <div v-for="analysis in result" :key="result">
+          <div class="results" v-for="(user_analysis,key) in analysis" :key="user_analysis">
+            <h3>User: {{key}}</h3>
+            <p><em><b>Analysis:</b></em> {{user_analysis}}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
