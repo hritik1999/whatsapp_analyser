@@ -160,7 +160,7 @@ def data_analysis(file):
 
   texts = file.split('\n')
 
-
+  print(file)
   for line in texts:
     if android_date_pattern.match(line):
         num=1
@@ -168,17 +168,17 @@ def data_analysis(file):
     elif ios_date_pattern.match(line):
         num=0
         break
-
+    
+  
+  data=''
+  for line in texts:
+      clean_line = ''.join(char for char in line if char.isprintable())
+        # Now process the clean_line further as needed
+      data+=clean_line
   if num==0:
-    #with open(file, 'r', encoding='utf-8') as file:
-      #data=''
-    for line in file:
-        clean_line = ''.join(char for char in line if char.isprintable())
-          # Now process the clean_line further as needed
-        data+=clean_line
     df=data_organize_android(data)
   else:
-    df=data_organize_ios(file)
+    df=data_organize_ios(data)
   p1=last_days(df)
   p2=NO_OF_MSG(df)
   p3=NO_OF_words(df)

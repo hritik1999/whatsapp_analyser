@@ -5,6 +5,7 @@ import axios from 'axios'
 const file = ref(null)
 const result = ref(null)
 const loading = ref(false)
+const plotUrls = ref([])
 
 const onFileChange = (event) => {
   file.value = event.target.files[0]
@@ -26,6 +27,12 @@ const submitFile = async () => {
     result.value = await response.json()
     console.log(result.value)
     loading.value = false
+    const plotResponse = await fetch('http://127.0.0.1:5000/plot_chat', {
+      method: 'POST',
+      body: formData
+    })
+    plotUrls.value = await plotResponse.json()
+    console.log(plotUrls.value)
   } catch {
     loading.value = false
     console.error('Failed to submit file')
@@ -61,6 +68,16 @@ const submitFile = async () => {
         </div>
       </div>
     </div>
+    <!-- <div class="card mt-4 mx-auto" v-if="plotUrls"> -->
+    <div class="card mt-4 mx-auto" v-if="plotUrls">
+      <div class="card-body">
+        <h2>Generated Plots</h2>
+        <div v-for="(base64Image, index) in plotUrls" :key="index">
+        <img :src="'data:image/png;base64,' + base64Image" alt="Plot" class="img-fluid mt-3"/>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
   </div>
 </template>
 
