@@ -60,10 +60,21 @@ const submitFile = async () => {
     <div class="card mt-4 mx-auto" v-if="result">
       <div class="card-body">
         <h2>Analysis Result</h2>
-        <div v-for="analysis in result" :key="result">
-          <div class="results" v-for="(user_analysis,key) in analysis" :key="user_analysis">
-            <h3>User: {{key}}</h3>
-            <p><em><b>Analysis:</b></em> {{user_analysis}}</p>
+        <div class="accordion" id="accordionExample">
+          <div v-for="analysis in result" :key="result">
+            <div class="accordion-item results" v-for="(user_analysis,key) in analysis" :key="user_analysis">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <strong>User: {{key}} </strong>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  {{user_analysis}}
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
