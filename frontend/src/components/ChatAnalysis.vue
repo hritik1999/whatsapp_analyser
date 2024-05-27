@@ -69,7 +69,7 @@ const submitFile = async () => {
       </div>
     </div>
     <!-- <div class="card mt-4 mx-auto" v-if="plotUrls"> -->
-    <div class="card mt-4 mx-auto" v-if="plotUrls">
+    <div class="card mt-4 mx-auto" v-if="Object.keys(plotUrls).length > 0">
       <div class="card-body">
         <h2>Generated Plots</h2>
         <div v-for="(base64Image, index) in plotUrls" :key="index">
