@@ -7,6 +7,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_core.runnables import RunnablePassthrough
 from dotenv import load_dotenv , find_dotenv
+from .graphs import busy_day, busy_month, freq_words, last_days, links, word_cloud, NO_OF_MSG, NO_OF_words, data_organize_android, data_organize_ios
 
 _ = load_dotenv(find_dotenv())
 os.environ['OPENAI_API_KEY'] = os.getenv('API_KEY')
@@ -151,4 +152,47 @@ def personality_analyser(text_chunks):
   if user_summary_analysis:
     result['user_summary_analysis'] = user_summary_analysis
   return json.dumps(result,indent=4)
+
+
+def data_analysis(file):
+  android_date_pattern = re.compile(r'^\d{1,2}/\d{1,2}/\d{2}, \d{1,2}:\d{2} - ')
+  ios_date_pattern = re.compile(r'^\[\d{1,2}/\d{1,2}/\d{2,4}, \d{1,2}:\d{2}:\d{2}\u202f[APM]{2}\]')
+
+  texts = file.split('\n')
+
+
+  for line in texts:
+    if android_date_pattern.match(line):
+        num=0
+        break
+    elif ios_date_pattern.match(line):
+        num=1
+        break
+
+  if num==0:
+    #with open(file, 'r', encoding='utf-8') as file:
+      #data=''
+    for line in file:
+        clean_line = ''.join(char for char in line if char.isprintable())
+          # Now process the clean_line further as needed
+        data+=clean_line
+    df=data_organize_android(data)
+  else:
+    df=data_organize_ios(file)
+  p1=last_days(df)
+  p2=NO_OF_MSG(df)
+  p3=NO_OF_words(df)
+  p4=links(df)
+
+  p5=busy_day(df)
+  p6=busy_month(df)
+  p7=freq_words(df)
+ # p8=word_cloud(df)
+
+  dict={'last_days':p1['last_days'],'no_of_msg':p2['no_of_msg'],'no_of_words':p3['no_of_words'],'no_of_links':p4['no_of_links'],'busy_day':p5['busy_day'],
+        'busy_month':p6['busy_month'],'freq_words':p7['freq_words']}##,'word_cloud':p8['word_cloud']}
+  return json.dumps(dict,indent=4)
+
+
+
     
