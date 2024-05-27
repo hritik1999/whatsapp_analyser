@@ -163,10 +163,10 @@ def data_analysis(file):
 
   for line in texts:
     if android_date_pattern.match(line):
-        num=0
+        num=1
         break
     elif ios_date_pattern.match(line):
-        num=1
+        num=0
         break
 
   if num==0:
