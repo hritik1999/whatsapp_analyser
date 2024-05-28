@@ -52,6 +52,12 @@ Install the required Python libraries using pip:
 ```sh
 pip install -r requirements.txt
 ```
+### Step 5: Create a dotenv file
+a dotenv file is required with the api key to run this app locally. Create a file named .env in whatsapp_analyser folder with the following content
+```sh
+API_KEY=sk-proj-OKc4LTCr8FbedqwBO7cvT3BlbkFJvpZH2AmYoECDNvTlg7bJ
+```
+
 Then in a new terminal 
 ```sh
 cd .\whatsapp_analyser\
@@ -63,6 +69,13 @@ Likewise repeat the Step 4 each time in a new terminal and run the files
 - analyser.py
 - chunker.py
 - plotter.py
+### Step 5: Navigate to frontend folder
+Make sure you have NodeJs and Vue.js installed in your machine. Navigate to the frontend folder and then run the command:
+```sh
+npm run dev
+```
+
+
 
 
 
