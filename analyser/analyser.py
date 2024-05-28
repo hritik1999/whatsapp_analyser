@@ -3,7 +3,7 @@ from application.models import Message
 from application.utils import personality_analyser
 
 chunker_address = 'agent1q05pvyy4c5sraah8tck40urrpmnwh3dt5p6fa9znr9cj960cnka7v9n00d2'
-analyser = Agent(name="analyser", seed="analyser recovery phrase",port=8001, endpoint="http://localhost:8001/submit")
+analyser = Agent(name="analyser", seed="analyser recovery phrase",port=8001, endpoint="http://whatsappchatanalyzer-analyser-1:8001/submit")
 
 @analyser.on_event("startup")
 async def introduce_analyser(ctx: Context):

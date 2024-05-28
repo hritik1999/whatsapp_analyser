@@ -1,6 +1,6 @@
-.env
 __pycache__
 .application/__pycache__
 env
 .frontend/.vscode
 .frontend/node_modules
+.frontend/package-lock.json

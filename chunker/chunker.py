@@ -4,7 +4,7 @@ from application.utils import text_chunking
 
 analyser_address = 'agent1qtladakw5ly6ap6xk4azz7p4r995rwjr3x8xm2yer479qdf502hvur2wpa4'
 
-chunker = Agent(name="chunker", seed="chunker recovery phrase",port=8000, endpoint="http://localhost:8000/submit")
+chunker = Agent(name="chunker", seed="chunker recovery phrase",port=8000, endpoint="http://whatsappchatanalyzer-chunker-1:8000/submit")
 
 
 @chunker.on_event("startup")

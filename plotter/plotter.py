@@ -2,7 +2,7 @@ from uagents import Agent,Context
 from application.models import Message
 from application.utils import data_analysis
 
-plotter = Agent(name="plotter", seed="plotter recovery phrase",port=8002, endpoint="http://localhost:8002/submit")
+plotter = Agent(name="plotter", seed="plotter recovery phrase",port=8002, endpoint="http://whatsappchatanalyzer-plotter-1:8002/submit")
 
 
 @plotter.on_event("startup")

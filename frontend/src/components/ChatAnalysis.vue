@@ -19,14 +19,14 @@ const submitFile = async () => {
   loading.value = true
 
   try{
-    const response = await fetch('http://127.0.0.1:5000/analyse_chat', {
+    const response = await fetch('http://127.0.0.1:5001/analyse_chat', {
       method: 'POST',
       body: formData
     })
     result.value = await response.json()
     console.log(result.value)
     loading.value = false
-    const plotResponse = await fetch('http://127.0.0.1:5000/plot_chat', {
+    const plotResponse = await fetch('http://127.0.0.1:5001/plot_chat', {
       method: 'POST',
       body: formData
     })
@@ -63,8 +63,8 @@ const submitFile = async () => {
       <div class="card-body">
         <h2>Analysis Result</h2>
         <div class="accordion" id="accordionExample">
-          <div v-for="analysis in result" :key="result">
-            <div class="accordion-item results" v-for="(user_analysis,key) in analysis" :key="user_analysis">
+          <div v-for="(analysis,index) in result" :key="index">
+            <div class="accordion-item results" v-for="(user_analysis,key) in analysis" :key="key">
               <h2 class="accordion-header">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   <strong>User: {{key}} </strong>

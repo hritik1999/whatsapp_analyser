@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  flask:
+    build: ./flask_app
+    command: python main.py
+    ports:
+      - "5001:5000"
+    depends_on:
+      - chunker
+      - analyser
+      - plotter
+    volumes:
+      - ./flask_app:/app
+    env_file:
+      - .env
+
+  chunker:
+    build: ./chunker
+    command: python chunker.py
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./chunker:/app
+    env_file:
+      - .env
+
+  analyser:
+    build: ./analyser
+    command: python analyser.py
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./analyser:/app
+    env_file:
+      - .env
+
+  plotter:
+    build: ./plotter
+    command: python plotter.py
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./plotter:/app
+    env_file:
+      - .env
+  frontend:
+    build: ./frontend
+    command: npm run serve
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./frontend:/app
+
+
+volumes:
+  flask-app:
+  chunker-app:
+  analyser-app:
+  plotter-app:
+  frontend-app:
