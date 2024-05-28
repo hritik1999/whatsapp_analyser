@@ -46,7 +46,7 @@ def  data_organize_ios(data):
   df['message_date'] = pd.to_datetime(dates, format='%m/%d/%y, %H:%M - ')
   df.rename(columns={'message_date': 'date'}, inplace=True)
   df.head(10)
-  df=df[~(df['user_message'].astype(str).str.contains("Messages and calls are end-to-end encrypted.|created this group|pinned a message| changed group name|changed the group description|joined using this group's"))]
+  df=df[~(df['user_message'].astype(str).str.contains("Messages and calls are end-to-end encrypted.|created group|pinned a message| changed group name|changed the group description|joined using this group's"))]
   df['User']=[(x.split(":")[0]) for x in df['user_message']]
   pattern = r'\b\w +added \w*\b'
   df = df[~(df['user_message'].astype(str).str.contains(pattern,case=False, regex=True))]
