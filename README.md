@@ -97,12 +97,12 @@ Below is an example screenshot showing personality traits analysis for each user
 
 ## Analysis of each user
 ![image](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/92bfeab8-8809-4035-b65b-f728fc5347f8)
-<br>
+<br><br><br>
 ![WhatsApp Image 2024-05-28 at 13 57 47_5e127f83](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/e58473b7-d838-4376-854f-61f63c08849f)
 ## Statistical summary of the chat 
-![image](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/eb11a4cc-56db-42ef-9831-a29e020f6d84)<br>
-![image](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/2e216a39-002c-41ad-9346-97c6da072a29)<br>
-![image](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/b36818d5-5c1c-45b6-b5a2-d9267111d08e)<br>
+![image](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/eb11a4cc-56db-42ef-9831-a29e020f6d84)<br><br>
+![image](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/2e216a39-002c-41ad-9346-97c6da072a29)<br><br>
+![image](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/b36818d5-5c1c-45b6-b5a2-d9267111d08e)<br><br>
 ![image](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/9ae9c1b2-8f60-4b8d-8f66-cecce48cf93a)
 # Conclusion
 In summary, the WhatsApp Text Analyzer is a transformative tool, providing users with unparalleled insights into their WhatsApp conversations. Through sophisticated analysis of chat data, it unveils communication patterns, user behaviors, and even personality traits, offering invaluable understanding and awareness. With its user-friendly interface, comprehensive features, and exportable reports, it empowers individuals, researchers, and organizations to derive meaningful insights from their chat history effortlessly. Whether for personal introspection, group dynamics examination, or data-driven decision-making, this tool proves indispensable. Continuously evolving with community contributions, it remains at the forefront of communication analysis, offering new features and enhancements to enrich the analysis experience. As users delve into their WhatsApp conversations, they gain newfound understanding and appreciation for their interactions. The WhatsApp Text Analyzer stands as a testament to the power of technology in facilitating deeper connections and insights. With gratitude to its users, developers, and contributors, it looks forward to further enhancing communication analysis for the benefit of all.
