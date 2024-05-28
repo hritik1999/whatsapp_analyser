@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import axios from 'axios'
 
 const file = ref(null)
 const result = ref(null)
@@ -38,6 +37,7 @@ const submitFile = async () => {
     console.error('Failed to submit file')
   }
 }
+
 </script>
 
 <template>
@@ -47,6 +47,7 @@ const submitFile = async () => {
       <div class="card-body">
         <div class="form-group mb-4">
           <label for="file" class="form-label">Upload Chat File:</label>
+          <label><a href="https://faq.whatsapp.com/1180414079177245/?cms_platform=android&helpref=platform_switcher&locale=eng">Click here </a>to see how to Export the chat! please export without media.</label><br>
           <input type="file" class="form-control" id="file" @change="onFileChange">
         </div>
         <div class="d-flex justify-content-center">
