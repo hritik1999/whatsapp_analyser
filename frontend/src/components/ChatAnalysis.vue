@@ -57,6 +57,7 @@ const submitFile = async () => {
     </div>
     <div class="text-center" v-if="loading"> 
         <img src="../assets/ZKZg.gif" height="50" width="50">
+        <p>Please wait a few minutes for the analysis to come!</p>
     </div>
     <div class="card mt-4 mx-auto" v-if="result">
       <div class="card-body">
