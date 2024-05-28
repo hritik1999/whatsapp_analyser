@@ -74,6 +74,41 @@ Make sure you have NodeJs and Vue.js installed in your machine. Navigate to the 
 ```sh
 npm run dev
 ```
+Click on the local host link and run the application locally
+
+### Introduction
+WhatsApp Text Analyzer is a tool designed to analyze WhatsApp chat data and provide insightful metrics and visualizations. With this tool, you can understand patterns, trends, and even personality traits of users within your WhatsApp conversations.
+### Features
+- Analyze WhatsApp chat data to generate insights.
+- Identify personality traits of users based on chat messages.
+- Visualize chat data with various charts and graphs.
+## Usage
+
+1. **Export Chat Data**: Export your WhatsApp chat data in text format and save it on your computer.
+
+2. **Run the Analyzer**: Use the provided script to analyze the chat data and generate insights. Upload the chat here:
+   ![WhatsApp Image 2024-05-28 at 13 36 30_36b7132d](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/bbcfad92-3bd3-4679-977f-ca424b93c774)
+
+
+3. **View Results**: Explore the generated analysis report to gain insights into the chat data, including personality traits of users.
+
+# Example Screenshot
+## Analysis of each user
+![WhatsApp Image 2024-05-28 at 13 56 16_e161f8d1](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/3b30d759-09d8-4cbc-9690-71f24d62be76)
+![WhatsApp Image 2024-05-28 at 13 57 47_5e127f83](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/e58473b7-d838-4376-854f-61f63c08849f)
+## Statistical summary of the chat 
+![image](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/eb11a4cc-56db-42ef-9831-a29e020f6d84)
+![image](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/2e216a39-002c-41ad-9346-97c6da072a29)
+![image](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/b36818d5-5c1c-45b6-b5a2-d9267111d08e)
+![image](https://github.com/hritik1999/whatsapp_analyser/assets/144601619/9ae9c1b2-8f60-4b8d-8f66-cecce48cf93a)
+
+
+
+
+
+
+
+Above is an example screenshot showing personality traits analysis for each user.
 
 
 
