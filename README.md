@@ -47,16 +47,22 @@ For macOS and Linux:
 ```sh
 source .venv/bin/activate
 ```
-Then,
+### Step 4: Install Dependencies
+Install the required Python libraries using pip:
+```sh
+pip install -r requirements.txt
 ```
+Then in a new terminal 
+```sh
 cd .\whatsapp_analyser\
 ```
-```
+```sh
 python main.py
 ```
-Likewise repeat the Step 4 each time in a new terminal and run the files analyser.py
- chunker.py
- plotter.py
+Likewise repeat the Step 4 each time in a new terminal and run the files 
+- analyser.py
+- chunker.py
+- plotter.py
 
 
 
