@@ -34,14 +34,25 @@ Use a virtual environment to manage dependencies. You can create and activate a 
 ```sh
 python -m venv .venv
 ```
-After that in a new terminal 
+After that in a new terminal
+
 For windows:
 
 ```sh
 .\.venv\Scripts\activate
+```
+
+For macOS and Linux:
+```sh
+source venv/bin/activate
+```
+```
 cd .\whatsapp_analyser\
+```
+```
 python main.py
 ```
+
 
 
 
