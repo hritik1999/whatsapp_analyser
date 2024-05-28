@@ -32,7 +32,16 @@ cd whatsapp_analyser
 Use a virtual environment to manage dependencies. You can create and activate a virtual environment using the following commands:
 
 ```sh
-python -m venv venv
+python -m venv .venv
 ```
+After that in a new terminal 
+For windows:
+
+```sh
+.\.venv\Scripts\activate
+cd .\whatsapp_analyser\
+python main.py
+```
+
 
 
