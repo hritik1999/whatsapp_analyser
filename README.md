@@ -18,6 +18,7 @@ To get started with the WhatsApp Analyzer, you need to clone the repository from
 
 ```sh
 git clone https://github.com/hritik1999/whatsapp_analyser.git
+```
 
 ### Step 2: Navigate to the Project Directory
 
@@ -25,11 +26,13 @@ Change your working directory to the newly cloned repository:
 
 ```sh
 cd whatsapp_analyser
+```
 
 ### Step 3: Set Up a Virtual Environment
 Use a virtual environment to manage dependencies. You can create and activate a virtual environment using the following commands:
 
 ```sh
 python -m venv venv
+```
 
 
