@@ -34,7 +34,8 @@ Use a virtual environment to manage dependencies. You can create and activate a 
 ```sh
 python -m venv .venv
 ```
-After that in a new terminal
+### Step 4: Run the files
+After that in a new terminal<br>
 
 For windows:
 
@@ -44,14 +45,18 @@ For windows:
 
 For macOS and Linux:
 ```sh
-source venv/bin/activate
+source .venv/bin/activate
 ```
+Then,
 ```
 cd .\whatsapp_analyser\
 ```
 ```
 python main.py
 ```
+Likewise repeat the Step 4 each time in a new terminal and run the files analyser.py
+ chunker.py
+ plotter.py
 
 
 
