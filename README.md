@@ -55,7 +55,7 @@ pip install -r requirements.txt
 ### Step 5: Create a dotenv file
 a dotenv file is required with the api key to run this app locally. Create a file named .env in whatsapp_analyser folder with the following content
 ```sh
-API_KEY=sk-proj-OKc4LTCr8FbedqwBO7cvT3BlbkFJvpZH2AmYoECDNvTlg7bJ
+API_KEY=
 ```
 
 Then in a new terminal 
