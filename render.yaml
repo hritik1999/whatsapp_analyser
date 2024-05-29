@@ -9,13 +9,6 @@ services:
       - file: .env
     dockerfilePath: /app/flask_app/Dockerfile
     autoDeploy: true
-    ports:
-      - containerPort: 5000
-        hostPort: 5001
-    mounts:
-      - type: volume
-        name: flask-app
-        path: /app
 
   - name: chunker
     type: web
@@ -27,13 +20,6 @@ services:
       - file: .env
     dockerfilePath: /app/chunker/Dockerfile
     autoDeploy: true
-    ports:
-      - containerPort: 8000
-        hostPort: 8000
-    mounts:
-      - type: volume
-        name: chunker-app
-        path: /app
 
   - name: analyser
     type: web
@@ -45,13 +31,6 @@ services:
       - file: .env
     dockerfilePath: /app/analyser/Dockerfile
     autoDeploy: true
-    ports:
-      - containerPort: 8001
-        hostPort: 8001
-    mounts:
-      - type: volume
-        name: analyser-app
-        path: /app
 
   - name: plotter
     type: web
@@ -63,13 +42,6 @@ services:
       - file: .env
     dockerfilePath: /app/plotter/Dockerfile
     autoDeploy: true
-    ports:
-      - containerPort: 8002
-        hostPort: 8002
-    mounts:
-      - type: volume
-        name: plotter-app
-        path: /app
 
   - name: frontend
     type: web
@@ -81,13 +53,6 @@ services:
       - file: .env
     dockerfilePath: /app/frontend/Dockerfile
     autoDeploy: true
-    ports:
-      - containerPort: 8080
-        hostPort: 8080
-    mounts:
-      - type: volume
-        name: frontend-app
-        path: /app
 
 volumes:
   - name: flask-app
