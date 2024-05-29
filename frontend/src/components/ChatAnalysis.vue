@@ -46,7 +46,7 @@ const submitFile = async () => {
     <div class="card mx-auto" style="max-width: 600px;">
       <div class="card-body">
         <div class="form-group mb-4">
-          <label for="file" class="form-label">Upload Chat File:</label>
+          <label for="file" class="form-label">Upload Group Chat File:</label>
           <label><a href="https://faq.whatsapp.com/1180414079177245/?cms_platform=android&helpref=platform_switcher&locale=eng">Click here </a>to see how to Export the chat. Please export without media.</label><br><br>
           <input type="file" class="form-control" id="file" @change="onFileChange">
         </div>
@@ -57,7 +57,7 @@ const submitFile = async () => {
     </div>
     <div class="text-center" v-if="loading"> 
         <img src="../assets/ZKZg.gif" height="50" width="50">
-        <p>Please wait a few minutes for the analysis to come!</p>
+        <p>Please wait a few minutes for the analysis to Complete!</p>
     </div>
     <div class="card mt-4 mx-auto" v-if="result">
       <div class="card-body">
