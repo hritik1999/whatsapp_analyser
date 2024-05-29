@@ -53,10 +53,3 @@ services:
       - file: .env
     dockerfilePath: /app/frontend/Dockerfile
     autoDeploy: true
-
-volumes:
-  - name: flask-app
-  - name: chunker-app
-  - name: analyser-app
-  - name: plotter-app
-  - name: frontend-app
