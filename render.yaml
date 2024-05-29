@@ -2,7 +2,7 @@ services:
   - name: flask
     type: web
     env: python
-    plan: starter
+    plan: free
     buildCommand: pip install -r /app/flask_app/requirements.txt
     startCommand: python /app/flask_app/main.py
     envVars:
@@ -15,7 +15,7 @@ services:
   - name: chunker
     type: web
     env: python
-    plan: starter
+    plan: free
     buildCommand: pip install -r /app/chunker/requirements.txt
     startCommand: python /app/chunker/chunker.py
     envVars:
@@ -26,7 +26,7 @@ services:
   - name: analyser
     type: web
     env: python
-    plan: starter
+    plan: free
     buildCommand: pip install -r /app/analyser/requirements.txt
     startCommand: python /app/analyser/analyser.py
     envVars:
@@ -37,7 +37,7 @@ services:
   - name: plotter
     type: web
     env: python
-    plan: starter
+    plan: free
     buildCommand: pip install -r /app/plotter/requirements.txt
     startCommand: python /app/plotter/plotter.py
     envVars:
@@ -48,7 +48,7 @@ services:
   - name: frontend
     type: web
     env: node
-    plan: starter
+    plan: free
     buildCommand: npm install
     startCommand: npm run serve
     envVars:
