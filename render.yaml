@@ -3,55 +3,33 @@ services:
     type: web
     env: python
     plan: free
-    buildCommand: pip install -r /app/flask_app/requirements.txt
-    startCommand: python /app/flask_app/main.py
-    envVars:
-      - key: FLASK_ENV
-        value: production
-      - key: ANOTHER_ENV_VAR
-        value: another_value
+    dockerfilePath: ./flask_app/Dockerfile
     autoDeploy: true
 
   - name: chunker
     type: web
     env: python
     plan: free
-    buildCommand: pip install -r /app/chunker/requirements.txt
-    startCommand: python /app/chunker/chunker.py
-    envVars:
-      - key: CHUNKER_ENV
-        value: production
+    dockerfilePath: ./chunker/Dockerfile
     autoDeploy: true
 
   - name: analyser
     type: web
     env: python
     plan: free
-    buildCommand: pip install -r /app/analyser/requirements.txt
-    startCommand: python /app/analyser/analyser.py
-    envVars:
-      - key: ANALYSER_ENV
-        value: production
+    dockerfilePath: ./analyser/Dockerfile
     autoDeploy: true
 
   - name: plotter
     type: web
     env: python
     plan: free
-    buildCommand: pip install -r /app/plotter/requirements.txt
-    startCommand: python /app/plotter/plotter.py
-    envVars:
-      - key: PLOTTER_ENV
-        value: production
+    dockerfilePath: ./plotter/Dockerfile
     autoDeploy: true
 
   - name: frontend
     type: web
     env: node
     plan: free
-    buildCommand: npm install
-    startCommand: npm run serve
-    envVars:
-      - key: NODE_ENV
-        value: production
+    dockerfilePath: ./frontend/Dockerfile
     autoDeploy: true
