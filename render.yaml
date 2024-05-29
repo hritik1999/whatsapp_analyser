@@ -3,12 +3,11 @@ services:
     type: web
     env: python
     plan: starter
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r /app/requirements.txt
     startCommand: python main.py
     envVars:
       - file: .env
-    build:
-      context: ./flask_app
+    dockerfilePath: /app/flask_app/Dockerfile
     autoDeploy: true
     ports:
       - containerPort: 5000
@@ -22,12 +21,11 @@ services:
     type: web
     env: python
     plan: starter
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r /app/requirements.txt
     startCommand: python chunker.py
     envVars:
       - file: .env
-    build:
-      context: ./chunker
+    dockerfilePath: /app/chunker/Dockerfile
     autoDeploy: true
     ports:
       - containerPort: 8000
@@ -41,12 +39,11 @@ services:
     type: web
     env: python
     plan: starter
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r /app/requirements.txt
     startCommand: python analyser.py
     envVars:
       - file: .env
-    build:
-      context: ./analyser
+    dockerfilePath: /app/analyser/Dockerfile
     autoDeploy: true
     ports:
       - containerPort: 8001
@@ -60,12 +57,11 @@ services:
     type: web
     env: python
     plan: starter
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r /app/requirements.txt
     startCommand: python plotter.py
     envVars:
       - file: .env
-    build:
-      context: ./plotter
+    dockerfilePath: /app/plotter/Dockerfile
     autoDeploy: true
     ports:
       - containerPort: 8002
@@ -83,8 +79,7 @@ services:
     startCommand: npm run serve
     envVars:
       - file: .env
-    build:
-      context: ./frontend
+    dockerfilePath: /app/frontend/Dockerfile
     autoDeploy: true
     ports:
       - containerPort: 8080
