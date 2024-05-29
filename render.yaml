@@ -1,0 +1,102 @@
+services:
+  - name: flask
+    type: web
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - file: .env
+    build:
+      context: ./flask_app
+    autoDeploy: true
+    ports:
+      - containerPort: 5000
+        hostPort: 5001
+    mounts:
+      - type: volume
+        name: flask-app
+        path: /app
+
+  - name: chunker
+    type: web
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: python chunker.py
+    envVars:
+      - file: .env
+    build:
+      context: ./chunker
+    autoDeploy: true
+    ports:
+      - containerPort: 8000
+        hostPort: 8000
+    mounts:
+      - type: volume
+        name: chunker-app
+        path: /app
+
+  - name: analyser
+    type: web
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: python analyser.py
+    envVars:
+      - file: .env
+    build:
+      context: ./analyser
+    autoDeploy: true
+    ports:
+      - containerPort: 8001
+        hostPort: 8001
+    mounts:
+      - type: volume
+        name: analyser-app
+        path: /app
+
+  - name: plotter
+    type: web
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: python plotter.py
+    envVars:
+      - file: .env
+    build:
+      context: ./plotter
+    autoDeploy: true
+    ports:
+      - containerPort: 8002
+        hostPort: 8002
+    mounts:
+      - type: volume
+        name: plotter-app
+        path: /app
+
+  - name: frontend
+    type: web
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm run serve
+    envVars:
+      - file: .env
+    build:
+      context: ./frontend
+    autoDeploy: true
+    ports:
+      - containerPort: 8080
+        hostPort: 8080
+    mounts:
+      - type: volume
+        name: frontend-app
+        path: /app
+
+volumes:
+  - name: flask-app
+  - name: chunker-app
+  - name: analyser-app
+  - name: plotter-app
+  - name: frontend-app
