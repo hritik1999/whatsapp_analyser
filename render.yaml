@@ -1,35 +1,35 @@
 services:
   - name: flask
     type: web
-    env: python
+    env: docker
     plan: free
     dockerfilePath: ./flask_app/Dockerfile
     autoDeploy: true
 
   - name: chunker
     type: web
-    env: python
+    env: docker
     plan: free
     dockerfilePath: ./chunker/Dockerfile
     autoDeploy: true
 
   - name: analyser
     type: web
-    env: python
+    env: docker
     plan: free
     dockerfilePath: ./analyser/Dockerfile
     autoDeploy: true
 
   - name: plotter
     type: web
-    env: python
+    env: docker
     plan: free
     dockerfilePath: ./plotter/Dockerfile
     autoDeploy: true
 
   - name: frontend
     type: web
-    env: node
+    env: docker
     plan: free
     dockerfilePath: ./frontend/Dockerfile
     autoDeploy: true
