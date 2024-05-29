@@ -10,7 +10,7 @@ from dotenv import load_dotenv , find_dotenv
 from .graphs import busy_day, busy_month, freq_words, last_days, links, word_cloud, NO_OF_MSG, NO_OF_words, data_organize_android, data_organize_ios
 
 _ = load_dotenv(find_dotenv())
-os.environ['OPENAI_API_KEY'] = os.getenv('API_KEY')
+os.environ['OPENAI_API_KEY'] = os.environ.get("API_KEY")
 
 def text_chunking(file):
     android_date_pattern = re.compile(r'^\d{1,2}/\d{1,2}/\d{2}, \d{1,2}:\d{2} - ')
